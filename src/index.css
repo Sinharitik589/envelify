@@ -5,3 +5,6 @@
 .layout-height{
   height: calc(100vh - theme(spacing.16));
 }
+.main-height{
+  max-height: calc(100vh - theme(spacing.28));
+}
