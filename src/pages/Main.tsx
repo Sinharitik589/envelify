@@ -4,17 +4,24 @@ import Files from '../components/Files'
 import Folder from '../components/Folder'
 import Title from '../components/Title'
 
+const dummyFolders = () => {
+  let folders = [];
+  for(let x=0;x<9;x++){
+    folders.push(x);
+  }
+  return folders;
+}
+
 export default function Main() {
   return (
     <>
         <Title name='Folders' />
         <section className='grid grid-cols-4 gap-4 folder-cont'>
-            <Folder folderName='first' link='/'/>
-            <Folder folderName='first' link='/'/>
-            <Folder folderName='first' link='/'/>
-            <Folder folderName='first' link='/'/>
-            <Folder folderName='first' link='/'/>
-            <Folder folderName='first' link='/'/>
+           {
+            dummyFolders().map((val,i) =>{
+              return <Folder tabIndex={i} alignment={i%4==0?"left-4":"right-4"} folderName='first' link='/'/>
+            })
+           }
         </section>
         <Title name='Files' />
         <section className="grid grid-cols-4 gap-4">

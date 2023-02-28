@@ -17,7 +17,7 @@ export default function Layout(props:LayOutProps) {
                 <header className='h-12 w-full border-b border-b-gray-300'>
                     <Header/>
                 </header>
-                <div className=' p-2 main-height overflow-auto'>
+                <div className=' p-2 main-height overflow-auto container'>
                     {props.children}
                 </div>
             </main>

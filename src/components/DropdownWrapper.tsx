@@ -23,7 +23,7 @@ export default function DropdownWrapper({btnClass,alignment,funcArray,as,text,bu
     const onFocusIn = () => {
         setDropdown(true);
     }
-    const onFocusOut = () => setDropdown(true);
+    const onFocusOut = () => setDropdown(false);
     return (
     <div className='relative w-fit mr-4'>
         {
