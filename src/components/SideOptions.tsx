@@ -9,7 +9,7 @@ type SideOptionsProps = {
 export default function SideOptions({name,icon,path,selected}:SideOptionsProps) {
   return (
     <Link to={path}>
-      <div className={`w-full rounded-2xl flex items-center p-1 text-gray-500 h-10 text-md  cursor-pointer ${selected?"bg-emerald-200":"hover:bg-emerald-100"}`}>
+      <div className={`w-full rounded-2xl flex items-center p-1 text-gray-500 h-10 text-md  cursor-pointer ${selected?"bg-emerald-200 dark:bg-emerald-500":"hover:bg-emerald-100 dark:hover:bg-emerald-300 "}  dark:text-white`}>
         <span className='mr-1'><Icon className={icon}></Icon></span><span className='font-sans'>{name}</span>
     </div>
     </Link>

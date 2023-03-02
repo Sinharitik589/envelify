@@ -3,6 +3,7 @@ import FileRow from '../components/FileRow'
 import Files from '../components/Files'
 import Folder from '../components/Folder'
 import Title from '../components/Title'
+import { useStore } from '../context/StoreContext'
 
 const dummyFolders = () => {
   let folders = [];
@@ -13,10 +14,12 @@ const dummyFolders = () => {
 }
 
 export default function Main() {
+
+  const {info} = useStore();
   return (
     <>
         <Title name='Folders' />
-        <section className='grid grid-cols-4 gap-4 folder-cont'>
+        <section className={`grid  gap-4 folder-cont ${info?"grid-cols-3":"grid-cols-4"}`}>
            {
             dummyFolders().map((val,i) =>{
               return <Folder tabIndex={i} alignment={i%4==0?"left-4":"right-4"} folderName='first' link='/'/>
@@ -24,7 +27,7 @@ export default function Main() {
            }
         </section>
         <Title name='Files' />
-        <section className="grid grid-cols-4 gap-4">
+        <section  className={`grid  gap-4  ${info?"grid-cols-3":"grid-cols-4"}`}>
             <Files/>
             <Files/>
             <Files/>

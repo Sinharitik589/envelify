@@ -3,10 +3,10 @@ import Icon from './Icon'
 
 export default function NavBar() {
   return (
-    <nav className="shadow-md grid  grid-cols-12 justify-between h-16 w-full p-2 pl-0 pr-0">
+    <nav className="shadow-md grid  grid-cols-12 justify-between h-16 w-full p-2 pl-0 pr-0 dark:bg-slate-900 dark:border-white dark:border-b">
         <div className='flex flex-row px-2 font-semibold col-span-2'>
           <img src={"./logo.png"} className="h-10" alt="" />
-          <label style={{lineHeight:"2.5rem"}} className='text-xl text-gray-500'>Envelify</label>
+          <label style={{lineHeight:"2.5rem"}} className='text-xl text-gray-500 dark:text-white'>Envelify</label>
         </div>
         <div className='w-full  col-span-8 flex flex-row  justify-start'>
           <div className="col-span-8 w-full basis-5/6 flex flex-row bg-gray-100 rounded-md flex-1/4 p-1">

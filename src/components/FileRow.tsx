@@ -13,7 +13,7 @@ type FileRowProps = {
 
 export default function FileRow({name,size,modified,owner,title,filetype}:FileRowProps) {
   return (
-    <div className='flex flex-row h-10  border-b border-gray-300 w-full font-sans'>
+    <div className='flex flex-row h-10  border-b border-gray-300 w-full font-sans dark:text-white'>
       <div className={`basis-1/2 h-full text-sm ${title?"font-medium":""}`}>
 
         <div className='flex items-center h-full'>{title?"":<Icon className={getFileIcon(filetype?filetype:"folder")}/>}{name}</div>

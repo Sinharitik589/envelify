@@ -1,4 +1,5 @@
-import React , {ReactNode} from 'react'
+import React , {ReactNode, useState} from 'react'
+import { useStore } from '../context/StoreContext'
 import Header from './Header'
 import SideBar from './SideBar'
 
@@ -7,13 +8,15 @@ type LayOutProps = {
 }
 
 export default function Layout(props:LayOutProps) {
+
+  const {info} = useStore();
   return (
-    <div className='w-full grid grid-cols-12 layout-height font-sans'>
-        <div className="col-span-2 border-r border-r-gray-300 sidebar-height">
+    <div className='w-full grid grid-cols-12 layout-height font-sans dark:bg-slate-900'>
+        <div className="col-span-2 border-r border-r-gray-300 sidebar-height  dark:border-b dark:border-white">
             <SideBar/>
         </div>
         <div className="col-span-10 grid grid-cols-12 layout-height ">
-            <main className='col-span-11'>
+            <main className={info?'col-span-8':'col-span-11'}>
                 <header className='h-12 w-full border-b border-b-gray-300'>
                     <Header/>
                 </header>
@@ -21,7 +24,7 @@ export default function Layout(props:LayOutProps) {
                     {props.children}
                 </div>
             </main>
-            <div className="col-span-1  h-full shadow-md layout-height"></div>
+            <div className={`h-full shadow-md layout-height ${info?'col-span-4':'col-span-1'} dark:border-l dark:border-white`}></div>
         </div>
         
     </div>
