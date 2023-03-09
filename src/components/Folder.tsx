@@ -24,11 +24,11 @@ export default function Folder({folderName,link,alignment,tabIndex}:FolderPropTy
 
   useEffect(() => {
     if(foldRef&&foldRef.current){
-      foldRef.current.addEventListener("focusin",() =>{
-          if(setInfo) setInfo(true);
+      foldRef.current.addEventListener("focusin",(e) =>{
+          if(setInfo&&e.target==foldRef.current) setInfo(true);
       });
-      foldRef.current.addEventListener("focusout",() =>{
-        if(setInfo) setInfo(false);
+      foldRef.current.addEventListener("focusout",(e) =>{
+        // if(setInfo&&e.target==foldRef.current) setInfo(false);
       });
     }
   },[])

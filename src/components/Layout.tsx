@@ -1,5 +1,6 @@
 import React , {ReactNode, useState} from 'react'
 import { useStore } from '../context/StoreContext'
+import FileInfo from './FileInfo'
 import Header from './Header'
 import SideBar from './SideBar'
 
@@ -24,7 +25,9 @@ export default function Layout(props:LayOutProps) {
                     {props.children}
                 </div>
             </main>
-            <div className={`h-full shadow-md layout-height ${info?'col-span-4':'col-span-1'} dark:border-l dark:border-white`}></div>
+            <div className={`h-full shadow-md layout-height ${info?'col-span-4':'col-span-1'} dark:border-l dark:border-white`}>
+                <FileInfo />
+            </div>
         </div>
         
     </div>
