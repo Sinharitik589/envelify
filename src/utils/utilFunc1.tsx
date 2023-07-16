@@ -1,4 +1,4 @@
-
+import jwt from "jsonwebtoken";
 export const getFileIcon = (t:string):string => {
 
     switch(t){
@@ -8,4 +8,8 @@ export const getFileIcon = (t:string):string => {
             return "fa-sharp fa-solid fa-file-pdf text-base text-red-300"
     }
 
+}
+
+export const verifyJwt = (token:any) => {
+    return ""
 }

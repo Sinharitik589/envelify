@@ -1,4 +1,3 @@
-import React from 'react'
 import { useStore } from '../context/StoreContext'
 import Icon from './Icon'
 
